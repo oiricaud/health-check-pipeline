@@ -1,0 +1,88 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: health-check-task
+  namespace: kabanero
+spec:
+  inputs:
+    params:
+      - default: docker.io/node:12-stretch
+        name: js-image
+        type: string
+      - default: googlefu/apic_compiler:v2-amd64
+        name: tools-image
+        type: string
+      - default: http://web-qa.devops-gse-state-288036-0143c5dd31acd8e030a1d6e0ab1380e3-0000.tor01.containers.appdomain.cloud
+        name: ops-url
+        type: string
+      - default: _healthchecks
+        name: health-endpoint
+        type: string
+    resources:
+      - name: source
+        type: git
+      - name: image
+        type: image
+  steps:
+    - args:
+        - -c
+        - |
+          set -e
+          pwd
+          oc version
+          # kubectl config current-context
+          # oc whoami
+          # kubectl config set-context --current --namespace=qa
+          oc projects
+
+          # oc project qa
+          oc get routes -n qa
+
+
+
+          # echo $(inputs.params.ops-url)/$(inputs.params.health-endpoint)
+          curl $(inputs.params.ops-url)/$(inputs.params.health-endpoint) -v > health-endpoint.json
+
+          cat health-endpoint.json
+
+          # check if there are any failed key value pairs
+          did_health_status_failed=$(jq '.["failed"] == []' ./health-endpoint.json)
+
+          if [ "$did_health_status_failed" = "true" ]; then
+             echo Health Status OK
+          else
+             echo ERROR: There was a problem in the health status, please check the health-endpoint.json file
+             exit 1
+          fi
+
+#          oc whoami
+#          # get routes and create a json file
+#
+#          oc get routes -n qa -o json > routes.json
+#
+#          # look in the json file and get the web url
+#
+#          qa_route=$(jq '.items | .[0].spec.host' ./routes.json)
+#          temp=$(echo $qa_route | tr -d '"')
+#          echo $temp
+#          curl "http://${temp}/_healthchecks" > health-endpoint.json
+#
+#          cat health-endpoint.json
+#
+#          # check if there are any failed key value pairs
+#
+#          did_health_status_failed=$(jq '.["failed"] == []' ./health-endpoint.json)
+#
+#          if [ "$did_health_status_failed" = "true" ]; then
+#            echo Health Status OK
+#          else
+#            echo ERROR: There was a problem in the health status, please check the health-endpoint.json file
+#            exit 1
+#          fi
+
+      command:
+        - /bin/bash
+      image: $(inputs.params.tools-image)
+      name: health-check
+      resources: {}
+      workingDir: $(inputs.resources.source.path)
