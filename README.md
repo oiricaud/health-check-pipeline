@@ -41,4 +41,9 @@ What if the default Kabanero pipelines are not enough? You've spent some time de
 
 Here is a quick demo I made https://asciinema.org/a/315675
 
+<<<<<<< HEAD
+=======
+
+323332174348967756732
+>>>>>>> dc9b7e45cfa20642fee0d41898eb598664c2059a
 9889
