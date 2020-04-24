@@ -41,8 +41,6 @@ What if the default Kabanero pipelines are not enough? You've spent some time de
 
 Here is a quick demo I made https://asciinema.org/a/315675
 
-988934434
-8797
-8998898
-8867
-878
+
+323332174348967756732
+9889
