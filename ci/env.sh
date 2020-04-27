@@ -40,9 +40,9 @@ export USE_BUILDAH=true
 CI_WAIT_FOR=
 
 # Show output of commands
-if [ -z $VERBOSE ]; then
-    VERBOSE=false
-fi
+# if [ -z $VERBOSE ]; then
+#    VERBOSE=false
+# fi
 
 exec_hooks() {
     local dir=$1
