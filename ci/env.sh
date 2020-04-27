@@ -20,12 +20,9 @@ mkdir -p $build_dir
 export IMAGE_REGISTRY_PUBLISH=true
 
 # Credentials for publishing images:
-export IMAGE_REGISTRY=docker.io
+# export IMAGE_REGISTRY=docker.io
 # export IMAGE_REGISTRY_USERNAME=ussername
 # export IMAGE_REGISTRY_PASSWORD=password
-
-echo $IMAGE_REGISTRY_USERNAME
-echo $IMAGE_REGISTRY_PASSWORD
 
 # Organization for images
 export IMAGE_REGISTRY_ORG=org
@@ -37,8 +34,7 @@ export INDEX_IMAGE=pipelines-index
 export INDEX_VERSION=SNAPSHOT
 
 # Use buildah instead of docker to build and push docker images when the value is true
-export USE_BUILDAH=true
-
+export USE_BUILDAH=false
 export VERBOSE=true
 # Specify a wrapper where required for long-running commands
 CI_WAIT_FOR=
