@@ -45,5 +45,5 @@ Here is a quick demo I made https://asciinema.org/a/315675
 909l8
 989
 999
-998k
+9988k
 8l
