@@ -43,6 +43,6 @@ Here is a quick demo I made https://asciinema.org/a/315675
 6
 999399
 909l8
-98
+989
 99
 998
