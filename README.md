@@ -45,7 +45,7 @@ Here is a quick demo I made https://asciinema.org/a/315675
 909l8
 9890k
 99889ki
-8l
+8li
 8
 9
 43
