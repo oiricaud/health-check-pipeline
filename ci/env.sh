@@ -217,3 +217,4 @@ image_registry_login() {
 
 #expose an extension point for running after main 'env' processing
 exec_hooks $script_dir/ext/post_env.d
+
