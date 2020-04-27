@@ -197,8 +197,6 @@ image_push() {
 }
 
 image_registry_login() {
-    echo "$IMAGE_REGISTRY_USERNAME" 
-    echo  $IMAGE_REGISTRY
     if [ "$IMAGE_REGISTRY_PUBLISH" == "true" ] && [ -n "$IMAGE_REGISTRY_PASSWORD" ]
     then
         if [ "$USE_BUILDAH" == "true" ]
