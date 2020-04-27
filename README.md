@@ -48,6 +48,5 @@ Here is a quick demo I made https://asciinema.org/a/315675
 8li
 898
 9
-438
-990
+438887
 e4
