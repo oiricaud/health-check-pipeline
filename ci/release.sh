@@ -8,6 +8,8 @@ exec_hooks $script_dir/ext/pre_release.d
 
 image_registry_login
 
+echo $build_dir
+
 if [ -f $build_dir/image_list ]
 then
     while read line
