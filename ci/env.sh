@@ -5,7 +5,7 @@ then
     # we've been here before
     return 0
 fi
-
+export VERBOSE=true
 export script_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export base_dir=$(cd "${script_dir}/.." && pwd)
 export assets_dir="${script_dir}/assets"
@@ -28,14 +28,14 @@ export IMAGE_REGISTRY_PUBLISH=true
 export IMAGE_REGISTRY_ORG=org
 
 # Name of pipelines-index image (ci/package.sh)
-export INDEX_IMAGE=pipelines-index
+export INDEX_IMAGE=test-pipeline
 
 # Version or snapshot identifier for pipelines-index (ci/package.sh)
 export INDEX_VERSION=SNAPSHOT
 
 # Use buildah instead of docker to build and push docker images when the value is true
 export USE_BUILDAH=false
-export VERBOSE=true
+
 # Specify a wrapper where required for long-running commands
 CI_WAIT_FOR=
 
