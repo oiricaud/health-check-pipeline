@@ -25,7 +25,7 @@ export IMAGE_REGISTRY_PUBLISH=true
 # export IMAGE_REGISTRY_PASSWORD=password
 
 # Organization for images
-export IMAGE_REGISTRY_ORG=org
+export IMAGE_REGISTRY_ORG=yellocabins
 
 # Name of pipelines-index image (ci/package.sh)
 export INDEX_IMAGE=test-pipeline
