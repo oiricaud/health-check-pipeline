@@ -28,7 +28,7 @@ export IMAGE_REGISTRY_PUBLISH=true
 export IMAGE_REGISTRY_ORG=yellocabins
 
 # Name of pipelines-index image (ci/package.sh)
-export INDEX_IMAGE=test-pipeline
+export INDEX_IMAGE=pipelines-index
 
 # Version or snapshot identifier for pipelines-index (ci/package.sh)
 export INDEX_VERSION=SNAPSHOT
