@@ -24,6 +24,9 @@ export IMAGE_REGISTRY=docker.io
 export IMAGE_REGISTRY_USERNAME=ussername
 export IMAGE_REGISTRY_PASSWORD=password
 
+echo $IMAGE_REGISTRY_USERNAME
+echo $IMAGE_REGISTRY_PASSWORD
+
 # Organization for images
 export IMAGE_REGISTRY_ORG=org
 
